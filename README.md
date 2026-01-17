@@ -157,25 +157,33 @@ $$
 followed by actuator saturation and slew-rate limiting.  
 This controller is reactive, interpretable, and serves as a reference baseline.
 
-### MPC (QP)
+### **MPC (QP)**
 
 At each timestep, the controller solves a finite-horizon quadratic program.
 
 **Objective**
 
-### Objective
+**Position error term**
+$$
+P_{error} = \sum_{i=0}^{N-1} w_r \|r_i\|^2
+$$
 
+**Relative velocity error term**
 $$
-\begin{aligned}
-\min_{\{u_i\}_{i=0}^{N-1}} \quad
-& \sum_{i=0}^{N-1} \Big(
-w_r \lVert r_i \rVert^2
-+ w_v \lVert v_{\mathrm{rel},i} \rVert^2
-+ w_u \lVert u_i \rVert^2
-+ w_{\Delta u} \lVert u_i - u_{i-1} \rVert^2
-\Big)
-\end{aligned}
+R_{vel} = \sum_{i=0}^{N-1} w_v \|v_{rel,i}\|^2
 $$
+
+**Control effort term**
+$$
+C_{effort} = \sum_{i=0}^{N-1} w_u \|u_i\|^2
+$$
+
+**Control smoothness (slew) term**
+$$
+C_{smoothness} = \sum_{i=0}^{N-1} w_{\Delta u} \|u_i - u_{i-1}\|^2
+$$
+
+**Final Objective** = $\min_{\{u_i\}} \; (P_{error} + R_{vel} + C_{effort} + C_{smoothness})$
 
 **Subject to**
 
