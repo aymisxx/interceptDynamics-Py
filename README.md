@@ -179,6 +179,8 @@ $$C_{effort} = \sum_{i=0}^{N-1} w_u \|u_i\|^2$$
 
 $$C_{smoothness} = \sum_{i=0}^{N-1} w_{\Delta u} \|u_i - u_{i-1}\|^2$$
 
+**Final Objective**
+
 $$finalObjective = \min_{\{u_i\}} \ (P_{error} + R_{vel} + C_{effort} + C_{smoothness})$$
 
 **Subject to**
