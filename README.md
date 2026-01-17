@@ -163,6 +163,8 @@ At each timestep, the controller solves a finite-horizon quadratic program.
 
 **Objective**
 
+### Objective
+
 $$
 \min_{\{u_i\}_{i=0}^{N-1}}
 \sum_{i=0}^{N-1}
