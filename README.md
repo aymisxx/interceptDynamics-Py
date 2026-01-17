@@ -166,14 +166,14 @@ At each timestep, the controller solves a finite-horizon quadratic program.
 ### Objective
 
 $$
-\min_{\{u_i\}_{i=0}^{N-1}}
+\min_{\{u_i\}_{i=0}^{N-1}} 
 \sum_{i=0}^{N-1}
-\left(
-w_r \|r_i\|^2
-+ w_v \|v_{rel,i}\|^2
-+ w_u \|u_i\|^2
-+ w_{\Delta u} \|u_i - u_{i-1}\|^2
-\right)
+\Big(
+w_r \lVert r_i \rVert^2
++ w_v \lVert v_{\text{rel},i} \rVert^2
++ w_u \lVert u_i \rVert^2
++ w_{\Delta u} \lVert u_i - u_{i-1} \rVert^2
+\Big)
 $$
 
 **Subject to**
