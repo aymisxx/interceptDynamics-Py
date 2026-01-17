@@ -159,31 +159,34 @@ This controller is reactive, interpretable, and serves as a reference baseline.
 
 ### MPC (QP)
 
-At each timestep, MPC solves a finite-horizon quadratic program:
+At each timestep, the controller solves a finite-horizon quadratic program.
 
-**Objective:**
+**Objective**
 
-$
-\min_{\{u_k\}} \sum_{i=0}^{N-1}
-\Big(
-w_r \|r_i\|^2 +
-w_v \|v_{rel,i}\|^2 +
-w_u \|u_i\|^2 +
-w_{\Delta u} \|u_i - u_{i-1}\|^2
-\Big)
-$
+$$
+\min_{\{u_i\}_{i=0}^{N-1}}
+\sum_{i=0}^{N-1}
+\left(
+w_r \|r_i\|^2
++ w_v \|v_{rel,i}\|^2
++ w_u \|u_i\|^2
++ w_{\Delta u} \|u_i - u_{i-1}\|^2
+\right)
+$$
 
-**Subject to:**
+**Subject to**
 
-$
+$$
 x_{i+1} = A x_i + B u_i + d_i
-$
+$$
 
-$
-|u_i| \le a_{max}, \qquad |u_i - u_{i-1}| \le du_{max}
-$
+$$
+\|u_i\|_\infty \le a_{\max},
+\qquad
+\|u_i - u_{i-1}\|_\infty \le du_{\max}
+$$
 
-Only the first control input $u_0^*$ is applied before re-solving at the next timestep (receding horizon).
+Only the first control input $u_0^*$ is applied before re-solving at the next timestep (receding-horizon control).
 
 ---
 
