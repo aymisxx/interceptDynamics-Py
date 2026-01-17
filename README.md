@@ -164,26 +164,22 @@ At each timestep, the controller solves a finite-horizon quadratic program.
 **Objective**
 
 **Position error term**
-$$
-P_{error} = \sum_{i=0}^{N-1} w_r \|r_i\|^2
-$$
+
+$P_{error} = \sum_{i=0}^{N-1} w_r \|r_i\|^2$
 
 **Relative velocity error term**
-$$
-R_{vel} = \sum_{i=0}^{N-1} w_v \|v_{rel,i}\|^2
-$$
+
+$R_{vel} = \sum_{i=0}^{N-1} w_v \|v_{rel,i}\|^2$
 
 **Control effort term**
-$$
-C_{effort} = \sum_{i=0}^{N-1} w_u \|u_i\|^2
-$$
+
+$C_{effort} = \sum_{i=0}^{N-1} w_u \|u_i\|^2$
 
 **Control smoothness (slew) term**
-$$
-C_{smoothness} = \sum_{i=0}^{N-1} w_{\Delta u} \|u_i - u_{i-1}\|^2
-$$
 
-**Final Objective** = $\min_{\{u_i\}} \; (P_{error} + R_{vel} + C_{effort} + C_{smoothness})$
+$C_{smoothness} = \sum_{i=0}^{N-1} w_{\Delta u} \|u_i - u_{i-1}\|^2$
+
+**Final Objective** = $\min_{\{u_i\}} \ (P_{error} + R_{vel} + C_{effort} + C_{smoothness})$
 
 **Subject to**
 
