@@ -1,0 +1,3 @@
+controller,intercepted,time_to_intercept_s,min_distance_m,control_energy_int_u2_dt,accel_saturation_pct,slew_activity_pct
+PD_baseline_stressed,True,6.45,1.2767241055585699,1305.585060008454,18.8,0.4008016032064128
+MPC_QP_stressed,True,4.75,0.0061275951962828906,3720.509719954421,61.199999999999996,2.80561122244489

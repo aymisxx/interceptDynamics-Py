@@ -1,0 +1,23 @@
+{
+  "dt": 0.05,
+  "t_max": 25.0,
+  "N_mpc": 25,
+  "R_capture": 5.0,
+  "a_max": 15.0,
+  "du_max": 5.0,
+  "baseline": {
+    "kp_pos": 0.8,
+    "kd_vel": 1.6
+  },
+  "mpc_weights": {
+    "w_r": 10.0,
+    "w_v": 1.0,
+    "w_u": 0.05,
+    "w_du": 0.2
+  },
+  "seed": 7,
+  "results_dir": "D:\\(Local Repositories)\\interceptDynamics-Py\\results",
+  "plots_dir": "D:\\(Local Repositories)\\interceptDynamics-Py\\results\\plots",
+  "anims_dir": "D:\\(Local Repositories)\\interceptDynamics-Py\\results\\animations",
+  "logs_dir": "D:\\(Local Repositories)\\interceptDynamics-Py\\results\\logs"
+}

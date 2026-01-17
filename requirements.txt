@@ -1,0 +1,17 @@
+numpy>=1.23
+scipy>=1.9
+matplotlib>=3.7
+pandas>=2.0
+tqdm>=4.66
+
+# Jupyter / Notebook
+jupyter>=1.0
+ipykernel>=6.25
+
+# MPC / QP
+cvxpy>=1.4
+osqp>=0.6
+
+# MP4 / GIF animation
+imageio>=2.31
+imageio-ffmpeg>=0.4
