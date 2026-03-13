@@ -201,7 +201,7 @@ Only the first control input $u_0^*$ is applied before re-solving at the next ti
 
 ## Results summary (stressed turning target)
 
-![Final Trajectory](../results/animations/mpc_qp_stressed.gif)
+![Final Trajectory](results/animations/mpc_qp_stressed.gif)
 
 - Both controllers successfully intercept the target
 - **MPC achieves interception significantly earlier**
