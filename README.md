@@ -203,10 +203,10 @@ Only the first control input $u_0^*$ is applied before re-solving at the next ti
 
 ![Final Trajectory](results/animations/mpc_qp_stressed.gif)
 
-- Both controllers successfully intercept the target
-- **MPC achieves interception significantly earlier**
-- MPC trades higher control saturation and energy for speed
-- PD baseline is smoother but slower and more reactive
+- Both controllers successfully intercept the target.
+- **MPC achieves interception significantly earlier**.
+- MPC trades higher control saturation and energy for speed.
+- PD baseline is smoother but slower and more reactive.
 
 Metrics, plots, and logs are saved in `results/` for full transparency.
 
@@ -215,27 +215,27 @@ Metrics, plots, and logs are saved in `results/` for full transparency.
 In some runs, the distance-to-target curve may cross the capture threshold more than once before the trajectories visually converge.
 
 This is expected because:
-- point-mass modeling
-- discrete-time simulation
-- proximity-based capture
-- no terminal kill modeling
+- point-mass modeling.
+- discrete-time simulation.
+- proximity-based capture.
+- no terminal kill modeling.
 
 This behavior reflects a modeling boundary, not a guidance failure.
 
 ## Reproducibility
 
-- All parameters are centralized in a config block
-- Deterministic seeds are used where applicable
-- Logs, metrics, and configs are saved alongside plots
-- A cold `Run All` reproduces the same results
+- All parameters are centralized in a config block.
+- Deterministic seeds are used where applicable.
+- Logs, metrics, and configs are saved alongside plots.
+- A cold `Run All` reproduces the same results.
 
 ## Known limitations (by design)
 
 - 2D kinematics only
-- Scenario-defined target acceleration (perfect information)
-- No sensor noise or state estimation
-- No terminal kill / blast modeling
-- Discrete capture detection
+- Scenario-defined target acceleration (perfect information).
+- No sensor noise or state estimation.
+- No terminal kill / blast modeling.
+- Discrete capture detection.
 
 ---
 
