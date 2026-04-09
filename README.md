@@ -169,7 +169,7 @@ The relative state vector is defined as:
 so that
 
 $$
-x = [x_1 \\ x_2 \\ x_3 \\ x_4]^T
+x = [x_1 \ \ x_2 \ \ x_3 \ \ x_4]^T
 $$
 
 This is the state used throughout the guidance and diagnostics pipeline. It exposes the interception geometry directly: if the relative position goes to zero, the missile reaches the target.
