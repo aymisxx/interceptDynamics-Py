@@ -159,23 +159,17 @@ $$
 v_{\mathrm{rel}} = v_t - v_m
 $$
 
-The relative state vector is:
+The relative state vector is defined as:
+
+- $x_1 = r_x = p_{t,x} - p_{m,x}$
+- $x_2 = r_y = p_{t,y} - p_{m,y}$
+- $x_3 = v_x = v_{t,x} - v_{m,x}$
+- $x_4 = v_y = v_{t,y} - v_{m,y}$
+
+so that
 
 $$
-x =
-\begin{bmatrix}
-r_x \\
-r_y \\
-v_x \\
-v_y
-\end{bmatrix}
-=
-\begin{bmatrix}
-p_{t,x} - p_{m,x} \\
-p_{t,y} - p_{m,y} \\
-v_{t,x} - v_{m,x} \\
-v_{t,y} - v_{m,y}
-\end{bmatrix}
+x = [x_1 \\ x_2 \\ x_3 \\ x_4]^T
 $$
 
 This is the state used throughout the guidance and diagnostics pipeline. It exposes the interception geometry directly: if the relative position goes to zero, the missile reaches the target.
